@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Now – Glow Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;}
+body{background:#0a0a0a;
+  color:#fff;overflow-x:hidden;}
+
+
+/* navbarr */
+header {
+    background-color: #2b004d;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+     position: fixed;  
+    top: 0;         
+    width: 100%;      
+    z-index: 1000; 
+}
+
+header .logo img {
+    height: 50px;
+}
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+header nav a:hover {
+    color: #b56eff;
+}
+.search-container {
+    display: flex;
+}
+.search-container input {
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+}
+.search-container button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: #b56eff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.search-container button:hover {
+    background: #7b3eff;
+}
+.login-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #b56eff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-btn:hover {
+    background: #7b3eff;
+}
+
+
+/* ===== HERO ===== */
+.hero{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:60px;
+  padding:120px 40px;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(10,0,30,0.9)),url('https://images.unsplash.com/photo-1616469829712-7b80d7a7d3e1?auto=format&fit=crop&w=1400&q=80');
+  background-size:cover;
+  background-position:center;
+}
+.hero-text{
+  flex:1 1 400px;
+  text-align:left;
+}
+.hero-text h1{
+  font-size:52px;
+  color:#fff;
+  text-shadow:0 0 25px #a020f0, 0 0 40px #a020f0;
+  margin-bottom:15px;
+  animation: glowText 2s infinite alternate;
+}
+.hero-text p{
+  color:#f4eaff;
+  margin-bottom:25px;
+  font-size:20px;
+  text-shadow:0 0 15px #a020f0;
+}
+.hero-text button{
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#000,#a020f0);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px rgba(160,32,240,0.6);
+}
+.hero-text button:hover{transform:scale(1.1);}
+.hero-img{
+  flex:1 1 350px;
+  display:flex;
+  justify-content:center;
+}
+.hero-img img{
+  width:100%;
+  max-width:400px;
+  border-radius:30px;
+  box-shadow:0 0 40px rgba(160,32,240,0.7);
+  transition:0.4s;
+}
+.hero-img img:hover{
+  transform:scale(1.05);
+}
+@keyframes glowText {
+  from {text-shadow:0 0 10px #a020f0,0 0 20px #a020f0;}
+  to {text-shadow:0 0 25px #ff66ff,0 0 50px #a020f0;}
+}
+
+/* ===== ABOUT GLOW (Text + Image Section) ===== */
+.about-glow {
+  padding: 100px 60px;
+  background: linear-gradient(145deg, #0f001c, #1a0033);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+}
+.about-text {
+  flex: 1 1 450px;
+  color: #fff;
+}
+.about-text h2 {
+  font-size: 38px;
+  color: #b56eff;
+  text-shadow: 0 0 25px #a020f0;
+  margin-bottom: 20px;
+  animation: glowText 2s infinite alternate;
+}
+.about-text p {
+  color: #e5d6ff;
+  line-height: 1.8;
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+.about-text button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #000, #a020f0);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 20px rgba(160,32,240,0.6);
+}
+.about-text button:hover {
+  transform: scale(1.1);
+}
+.about-img {
+  flex: 1 1 450px;
+  display: flex;
+  justify-content: center;
+}
+.about-img img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 30px;
+  box-shadow: 0 0 40px rgba(160, 32, 240, 0.6);
+  transition: 0.4s;
+}
+.about-img img:hover {
+  transform: scale(1.05);
+}
+
+/* responsive */
+@media(max-width: 900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text{text-align:center;}
+  .about-content{
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-img img{max-width: 100%;}
+}
+
+/* ===== 3 BUTTONS ===== */
+.product-actions{
+  margin:40px 0;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+.product-actions a{
+  padding:15px 35px;
+  background:linear-gradient(135deg,#000,#a020f0);
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.4s;
+  position:relative;
+  overflow:hidden;
+}
+.product-actions a::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:rgba(255,255,255,0.1);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:0.6s;
+}
+.product-actions a:hover::before{
+  width:300px;
+  height:300px;
+}
+.product-actions a:hover{
+  transform:scale(1.1);
+  box-shadow:0 10px 40px rgba(160,32,240,0.7);
+}
+
+/* ===== PRODUCTS ===== */
+.shop-products{
+  padding:60px 50px;
+}
+.shop-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+.shop-card{
+  background:#111;
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+  transition:0.4s;
+}
+.shop-card:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 20px 50px rgba(160,32,240,0.7);
+}
+.shop-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:15px;
+}
+.shop-card h3{margin-bottom:8px;}
+.shop-card span{
+  color:#a020f0;
+  font-size:18px;
+  font-weight:700;
+}
+.shop-card button{
+  margin-top:12px;
+  padding:10px 25px;
+  border:none;
+  background:linear-gradient(135deg,#000,#a020f0);
+  color:#fff;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.4s;
+}
+.shop-card button:hover{transform:scale(1.1);}
+
+/* ===== CUSTOMER REVIEWS ===== */
+.reviews{
+  padding:80px 50px;
+  background:#140028;
+  text-align:center;
+}
+.reviews h2{
+  font-size:40px;
+  color:#a020f0;
+  margin-bottom:40px;
+  text-shadow:0 0 20px #a020f0;
+}
+.review-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
+}
+.review-card{
+  background:linear-gradient(145deg,#0a0018,#1c0040);
+  padding:30px;
+  border-radius:25px;
+  color:#e5d6ff;
+  transition:0.4s;
+  box-shadow:0 0 25px rgba(160,32,240,0.3);
+}
+.review-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 50px rgba(160,32,240,0.7);
+}
+.review-card img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:12px;
+  border:3px solid #a020f0;
+}
+.review-card i{
+  color:#ff99ff;
+  margin-bottom:10px;
+}
+.review-card p{
+  font-size:15px;
+  color:#d8c9ff;
+  margin:10px 0;
+}
+.review-card strong{
+  color:#fff;
+  text-shadow:0 0 10px #a020f0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:30px;
+  background:#000;
+  text-align:center;
+  color:#a020f0;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo"><img src="  https://i.etsystatic.com/21527957/r/il/d13570/3993296140/il_fullxfull.3993296140_pov8.jpg   " alt=""></div>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./product.html">product</a>
+        <a href="./SHOP.HTML">shop</a>
+        <a href="./contact .html">Contact</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+    </div>
+    <button class="login-btn">Sign I</button>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Shop Our Collection</h1>
+    <p>Discover the art of beauty — redefine your glow </p>
+    <button onclick="window.location='#products'">Explore Products</button>
+  </div>
+  <div class="hero-img">
+    <img src="   https://img.freepik.com/free-vector/realistic-cosmetic-background-with-beauty-products_79603-609.jpg?t=st=1733659167~exp=1733662767~hmac=8d4a7853060de61a4707e5e4731c88315e4b13e7325a1f2ef14d9228a4bb06de&w=996 " alt="Glow Beauty">
+  </div>
+</section>
+
+<!-- ===== ABOUT GLOW SECTION ===== -->
+<section class="about-glow">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Our Glow Story </h2>
+      <p>
+        At <strong>Glow Beauty</strong>, we believe every shade tells a story.  
+        From luxury lipsticks to skincare essentials, our mission is to help you feel confident in your own skin.  
+        All our products are cruelty-free, long-lasting, and made with love for every skin tone.
+      </p>
+      <button>Learn More</button>
+    </div>
+    <div class="about-img">
+      <img src="   https://media.istockphoto.com/id/1173485050/photo/a-makeup-artists-dream.jpg?s=612x612&w=0&k=20&c=PwLsulpQWgmSwQdo0YRaBCrVTWClheepJVw7I9eVvoo=    " alt="Glow Beauty Products">
+    </div>
+  </div>
+</section>
+
+<!-- 3 BUTTONS -->
+<section class="product-actions">
+  <a href="">Makeup</a>
+  <a href="">Skincare</a>
+  <a href="">Special Offers</a>
+</section>
+
+<!-- PRODUCTS -->
+<section class="shop-products" id="products">
+  <div class="shop-grid">
+    <div class="shop-card">
+      <img src="    https://tse1.mm.bing.net/th/id/OIP.S_tCbPXTax16Ab5nJIMtOgHaMM?rs=1&pid=ImgDetMain&o=7&rm=3  " alt="Lipstick">
+      <h3>primer     </h3>
+      <span>$15</span>
+      <button>Add to Cart</button>
+    </div>
+    <div class="shop-card">
+      <img src="data:image/webp;base64,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" alt="Foundation">
+      <h3>Silk Foundation</h3>
+      <span>$25</span>
+      <button>Add to Cart</button>
+    </div>
+    <div class="shop-card">
+      <img src="  https://images.pexels.com/photos/4938453/pexels-photo-4938453.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4938453.jpg&fm=jpg" alt="Eye Palette">
+      <h3>  serum </h3>
+      <span>$30</span>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOMER REVIEWS ===== -->
+<section class="reviews">
+  <h2>Cosmetic Reviews </h2>
+  <div class="review-cards">
+    <div class="review-card">
+      <img src="   https://tse1.mm.bing.net/th/id/OIP.S6VoJ667Qo7NYWojbrWmMwHaFh?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Customer 1">
+      <h3>Ayesha</h3>
+      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+      <p>“This foundation blends like magic! My skin feels smooth and radiant all day.”</p>
+    </div>
+
+    <div class="review-card">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=60" alt="Customer 2">
+      <h3>Hina</h3>
+      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      <p>“Lipsticks are super smooth, pigmented and last for hours! Totally love them.”</p>
+    </div>
+
+    <div class="review-card">
+      <img src="   https://i.cbc.ca/1.3967387.1486224042!/fileImage/httpImage/image.jpg_gen/derivatives/original_780/rachelle.jpg  "    alt="Customer 3">
+      <h3>Zara</h3>
+      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      <p>“The eye palette shades are stunning — rich, vibrant, and stay all day long.”</p>
+    </div>  
+  </div>
+</section>
+
+<footer>
+  © 2026 Glow Beauty | Designed with ❤️
+</footer>
+
+</body>
+</html>

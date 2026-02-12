@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Beauty – Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #0a001a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    background-color: #2b004d;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+     position: fixed; 
+    top: 0;          
+    width: 100%;     
+    z-index: 1000;  
+}
+
+header .logo img {
+    height: 50px;
+}
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+header nav a:hover {
+    color: #b56eff;
+}
+.search-container {
+    display: flex;
+}
+.search-container input {
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+}
+.search-container button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: #b56eff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.search-container button:hover {
+    background: #7b3eff;
+}
+.login-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #b56eff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-btn:hover {
+    background: #7b3eff;
+}
+/* ===== HERO SLIDER ===== */
+.hero {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 20px;
+}
+.hero-text h2 {
+    font-size: 38px;
+    color: #b56eff;
+    margin-bottom: 10px;
+    animation: fadeUp 1s;
+}
+.hero-text p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    animation: fadeUp 1.2s;
+}
+.hero-text button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#b56eff,#7b3eff);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    animation: fadeUp 1.4s;
+}
+.hero-text button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== OFFERS / CARDS ===== */
+.offers-section {
+    padding: 60px 50px;
+ 
+}
+.offers-section h2 {
+    font-size: 36px;
+    color: #b56eff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.offers-slider {
+    display: flex;
+  justify-content: center;
+   flex-wrap: wrap;
+    overflow-x: auto;
+    gap: 25px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+.offers-slider::-webkit-scrollbar {
+    height: 8px;
+}
+.offers-slider::-webkit-scrollbar-thumb {
+    background: #7b3eff;
+    border-radius: 20px;
+}
+.offer-card {
+    flex: 0 0 300px;
+    background: #1a002f;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+.offer-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(181,110,255,0.5);
+}
+.offer-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.offer-card h3 {
+    font-size: 22px;
+    color: #b56eff;
+    margin-bottom: 10px;
+}
+.offer-card p {
+    font-size: 15px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffae00;
+    margin-bottom: 15px;
+}
+.offer-card button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#b56eff,#7b3eff);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.offer-card button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== CUSTOMER REVIEWS ===== */
+.reviews {
+    padding: 60px 50px;  
+    background: #1a002f;
+}
+.reviews h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #b56eff;
+    margin-bottom: 40px;
+}
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+.review {
+    background: #2b004d;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(181,110,255,0.5);
+}
+.review p {
+    color: #fff;
+    margin-bottom: 15px;
+}
+.review h4 {
+    color: #ffae00;
+}
+
+/* ===== IMAGE + TEXT SECTION ===== */
+.featured-section {
+    padding: 60px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    background: #0d0022;
+    border-radius: 20px;
+    margin: 40px 50px;
+}
+.featured-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(181,110,255,0.4);
+}
+.featured-section .text {
+    flex: 1;
+    min-width: 250px;
+}
+.featured-section .text h2 {
+    color: #b56eff;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.featured-section .text p {
+    color: #fff;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #000;
+    color: #b56eff;
+    margin-top: 40px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px) {
+    .featured-section {flex-direction: column; text-align: center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo"><img src="https://i.etsystatic.com/21527957/r/il/d13570/3993296140/il_fullxfull.3993296140_pov8.jpg      " alt=""></div>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./product.html">product</a>
+        <a href="./SHOP.HTML">shop</a>
+        <a href="./contact .html">Contact</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+    </div>
+    <button class="login-btn">Sign I
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="home">
+    <div class="hero-slide active" style="background-image:url('  https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29zbWV0aWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');"></div>
+    <div class="hero-slide" style="background-image:url('https://t3.ftcdn.net/jpg/02/18/34/52/360_F_218345221_n89wfAxIi0bE8slrHzWulo8UHUZ1mNaP.jpg');"></div>
+
+    <div class="hero-text">
+        <h2>Enhance Your Natural Beauty</h2>
+        <p>"She applied a light layer of foundation for a natural look   !"</p>
+        <button>Shop Now</button>
+    </div>
+</section>
+
+<!-- OFFERS / CARDS -->
+<section class="offers-section" id="offers">
+  <h2>Exclusive Offers</h2>
+  <div class="offers-slider">
+    <div class="offer-card">
+      <img src="   https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9OzKus3RK8P1z2_vKmPY8-4C-Ymvcx5M-UQ&s  " alt="Highlight 1">
+      <h3>maybelline lipstick</h3>
+      <p>Boost your skin radiance instantly.</p>
+      <div class="price">$35</div>
+      <button>Shop Now</button>
+    </div>
+    <div class="offer-card">
+      <img src="  https://pierrecardin.pk/cdn/shop/files/Pierre_Cardin_website_packshots.jpg?v=1749238658 " alt="Highlight 2">
+      <h3>foundation</h3>
+      <p>Vibrant shades for every mood.</p>
+      <div class="price">$25</div>
+      <button>Shop Now</button>
+    </div>
+    <div class="offer-card">
+      <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo212vuI8tsJn3XRsPaZDxNyQRrzZ5SwKfMQ&s " alt="Highlight 3">
+      <h3> eyeshadow </h3>
+      <p>24h long-lasting hydration.</p>
+      <div class="price">$40</div>
+      <button>Shop Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+<section class="reviews" id="reviews">
+  <h2>Customer Reviews</h2>
+  <div class="review-grid">
+    <div class="review"><p>"Amazing quality and fast delivery!"</p><h4>- Sarah K.</h4></div>
+    <div class="review"><p>"Love the packaging and colors."</p><h4>- Priya M.</h4></div>
+    <div class="review"><p>"Best cosmetic store I've shopped from."</p><h4>- Anjali R.</h4></div>
+  </div>
+</section>
+
+<!-- IMAGE + TEXT SECTION -->
+<section class="featured-section" id="featured">
+  <img src="https://t4.ftcdn.net/jpg/02/29/72/79/360_F_229727901_C8osiLoJr5tawkTGdjYu3tbekO5cQ2eT.jpg" alt="Featured Cosmetic">
+  <div class="text">
+    <h2>Why Choose Our Products?</h2>
+    <p>Our cosmetics are carefully crafted to be skin-friendly, cruelty-free, and enhance your natural glow. Experience luxury beauty at its finest.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Glow Beauty | Bold. Beautiful. You !
+</footer>
+
+<script>
+// HERO SLIDER JS
+let slides = document.querySelectorAll('.hero-slide');
+let current = 0;
+setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current+1) % slides.length;
+    slides[current].classList.add('active');
+}, 4000);
+</script>
+
+</body>
+</html>
